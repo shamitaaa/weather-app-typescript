@@ -8,8 +8,10 @@ export interface Weather {
 }
 
 export interface WeatherData {
-    weather: any;
     base: string;
+    clouds: {
+        all: number;
+    };
     cod: number;
     coord: {
         lon: number;
@@ -18,6 +20,9 @@ export interface WeatherData {
     dt: number;
     id: number;
     main: {
+        feels_like: number;
+        humidity: number;
+        pressure: number;
         temp: number;
         temp_max: number;
         temp_min: number;
@@ -26,10 +31,18 @@ export interface WeatherData {
     sys: {
         country: string;
         id: number;
+        sunrise: number;
+        sunset: number;
         type: number;
     };
+    timezone: number;
+    visibility: number;
+    weather: Weather;
+    wind: {
+        speed: number;
+        deg: number;
+    };
 }
-
 
 export interface WeatherState {
     data: WeatherData | null;

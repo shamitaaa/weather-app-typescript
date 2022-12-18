@@ -5,7 +5,7 @@ interface WeatherProps {
     data: WeatherData;
 }
 
-const Weather: FC<WeatherProps> = ({ data }) => {
+const MainPage: FC<WeatherProps> = ({ data }) => {
     const fahrenheit = (data.main.temp * 1.8 - 459.67).toFixed(2);
     const celsius = (data.main.temp - 273.15).toFixed(2);
 
@@ -16,8 +16,8 @@ const Weather: FC<WeatherProps> = ({ data }) => {
                 <div className="level" style={{ alignItems: 'flex-start' }}>
                     <div className="level-item has-text-centered">
                         <div>
-                            <p className="heading">{data.weather[0].description}</p>
-                            <p className="title"><img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt="" /></p>
+                            <p className="heading">{data.weather.description}</p>
+                            <p className="title"><img src={`http://openweathermap.org/img/wn/${data.weather.icon}.png`} alt="" /></p>
                         </div>
                     </div>
                     <div className="level-item has-text-centered">
@@ -37,4 +37,4 @@ const Weather: FC<WeatherProps> = ({ data }) => {
     );
 }
 
-export default Weather;
+export default MainPage;

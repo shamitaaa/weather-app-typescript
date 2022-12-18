@@ -3,7 +3,8 @@ import { GET_WEATHER, WeatherAction, WeatherState } from "../types";
 const initialState: WeatherState = {
     data: null,
     loading: false,
-    error: ''
+    error: '',
+
 }
 
 export default (state = initialState, action: WeatherAction): WeatherState => {
@@ -12,7 +13,8 @@ export default (state = initialState, action: WeatherAction): WeatherState => {
             return {
                 data: action.payload,
                 loading: false,
-                error: ''
+                error: '',
+                
             }
         default:
             return state;
